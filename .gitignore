@@ -1,0 +1,6 @@
+k1-cluster-provisioner-sa-key.json
+terraform/terraform.tfstate
+terraform/terraform.tfstate.backup
+*-kubeconfig
+terraform/.terraform
+terraform/.terraform.lock.hcl
