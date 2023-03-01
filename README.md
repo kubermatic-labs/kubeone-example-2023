@@ -1,4 +1,4 @@
-# kubeone-gcp
+# kubeone
 
 
 To install KubeOne run the folliwng command in your shell:
@@ -16,9 +16,12 @@ ssh-add /home/YOURUSER/.ssh/id_rsa
 
 ```
 
-
+## GCP
+```
+cd gcp
+```
 Now configure a service account as described on this page:
-https://docs.kubermatic.com/kubeone/v1.4/guides/credentials/#environment-variables-3
+https://docs.kubermatic.com/kubeone/v1.6/guides/credentials/#environment-variables-3
 
 ```
 export GOOGLE_CREDENTIALS=$(cat ./k1-cluster-provisioner-sa-key.json)
