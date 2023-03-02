@@ -1,0 +1,26 @@
+# Reference from https://github.com/kubermatic-customer/wacker-internal/blob/master/kmatic-dev/kubeone/vsphere-seed/addons/13_metallb-config.yaml
+---
+apiVersion: metallb.io/v1beta1
+kind: IPAddressPool
+metadata:
+  name: default
+  namespace: metallb-system
+spec:
+  addresses:
+    - 10.222.28.150-10.222.28.199
+---
+apiVersion: metallb.io/v1beta1
+kind: IPAddressPool
+metadata:
+  name: kubermatic-ingress
+  namespace: metallb-system
+spec:
+  addresses:
+    - 10.222.28.253/32
+  autoAssign: false
+---
+apiVersion: metallb.io/v1beta1
+kind: L2Advertisement
+metadata:
+  name: advertise-all
+  namespace: metallb-system

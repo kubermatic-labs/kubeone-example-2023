@@ -1,0 +1,40 @@
+apiVersion: kubeone.k8c.io/v1beta2
+kind: KubeOneCluster
+versions:
+  kubernetes: '1.25.7'
+cloudProvider:
+  gce: {}
+  cloudConfig: |
+    [global]
+    regional = true
+addons:
+  enable: true
+  addons:
+  - name: cluster-autoscaler
+helmReleases:
+    # releaseName can be omitted, in that case it will defaulted to .chart
+  - releaseName: ksm
+    # chart is a required field, simply a chart name to deploy
+    chart: kube-state-metrics
+    # where to find the chart, chan be a remote server or local directory.
+    # --repo flag of the `helm upgrade` command.
+    repoURL: https://prometheus-community.github.io/helm-charts
+    # namespace to deploy helm release to. --namespace flag of the
+    # `helm upgrade` command.
+    namespace: kube-state-metrics
+    # use specific version instead of latest available, which is highly
+    # recommended, but version can be omitted. --version flag of the
+    # `helm upgrade` command.
+    version: 4.22.3
+    # provide optional overrides for chart values, --values flag of the
+    # `helm upgrade` command
+    values:
+#      - valuesFile: ksm-values.yaml   # it can be a file
+      - inline:                       # or directly specified inline YAML
+          replicas: 3
+#  - releaseName: nginx
+#    chart: nginx-ingress
+##    chart: nginx-stable/nginx-ingress
+#    repoURL: https://helm.nginx.com/stable
+#    namespace: nginx
+#    version: 0.16.2

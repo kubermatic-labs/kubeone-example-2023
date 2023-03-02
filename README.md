@@ -17,37 +17,9 @@ ssh-add /home/YOURUSER/.ssh/id_rsa
 ```
 
 ## GCP
-```
-cd gcp
-```
-Now configure a service account as described on this page:
-https://docs.kubermatic.com/kubeone/v1.6/guides/credentials/#environment-variables-3
 
-```
-export GOOGLE_CREDENTIALS=$(cat ./k1-cluster-provisioner-sa-key.json)
+see [gcp/README](gcp/README.md)
 
-```
+## vSphere
 
-Now we are set and can run the Terraform installation:
-
-```
-terraform init
-
-terraform apply -var=control_plane_target_pool_members_count=1
-terraform output -json > tf.json
-
-```
-Here you can find the reason why we use the terraform apply in a different way:
-https://docs.kubermatic.com/kubeone/v1.4/guides/using_terraform_configs/#terraform-apply-1
-
-Now lets run it:
-
-```
-
-kubeone apply -m kubeone.yaml -t terraform/tf.json 
-```
-
-If you want to migrate to container d
-```
-kubeone migrate to-containerd -m kubeone.yaml -t terraform/tf.json 
-```
+see [vsphere](vsphere)

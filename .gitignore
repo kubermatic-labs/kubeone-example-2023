@@ -3,5 +3,8 @@ k1-cluster-provisioner-sa-key.json
 terraform.tfstate
 terraform.tfstate.*
 *-kubeconfig
+kubeconfig-*
 .terraform/
 .terraform.lock.hcl
+.tf-json
+*.tar.gz

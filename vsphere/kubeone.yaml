@@ -1,0 +1,43 @@
+apiVersion: kubeone.k8c.io/v1beta2
+kind: KubeOneCluster
+versions:
+  kubernetes: 1.24.11
+cloudProvider:
+  vsphere: {}
+  cloudConfig: |
+    [Global]
+    secret-name = "vsphere-ccm-credentials"
+    secret-namespace = "kube-system"
+    port = "443"
+    insecure-flag = "0"
+
+    [VirtualCenter "10.10.0.100"]
+
+    [Workspace]
+    server = "10.10.0.100"
+    datacenter = "Hamburg"
+    default-datastore="vsan"
+    resourcepool-path=""
+    folder = "Kubermatic-PS"
+
+    [Disk]
+    scsicontrollertype = pvscsi
+
+    [Network]
+    public-network = "Default Network"
+
+clusterNetwork:
+  # CNI plugin of choice. CNI can not be changed later at upgrade time.
+  cni:
+    # Only one CNI plugin can be defined at the same time
+    # Supported CNI plugins:
+    # * canal
+    # * weave-net
+    # * cilium
+    # * external - The CNI plugin can be installed as an addon or manually
+    cilium:
+      enableHubble: true
+
+addons:
+  enable: true
+  path: "./addons" #l always apply

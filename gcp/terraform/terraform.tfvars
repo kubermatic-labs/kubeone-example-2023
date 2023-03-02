@@ -1,3 +1,3 @@
-project = "ps-workspace"
-cluster_name = "gdg-cloud-munich"
-ssh_public_key_file = "/home/mario/.ssh/id_rsa.pub"
+project = "kubermatic-run"
+cluster_name = "gcp-example-2023"
+ssh_public_key_file = "~/.ssh/id_rsa_loodse.pub"
