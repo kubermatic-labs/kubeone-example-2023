@@ -8,3 +8,4 @@ kubeconfig-*
 .terraform.lock.hcl
 .tf-json
 *.tar.gz
+.terraform.tfstate.lock.info
