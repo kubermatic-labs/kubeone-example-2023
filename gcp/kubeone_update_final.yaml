@@ -32,9 +32,8 @@ helmReleases:
 #      - valuesFile: ksm-values.yaml   # it can be a file
       - inline:                       # or directly specified inline YAML
           replicas: 3
-#  - releaseName: nginx
-#    chart: nginx-ingress
-##    chart: nginx-stable/nginx-ingress
-#    repoURL: https://helm.nginx.com/stable
-#    namespace: nginx
-#    version: 0.16.2
+  - releaseName: ingress-nginx
+    chart: ingress-nginx
+    repoURL: https://kubernetes.github.io/ingress-nginx
+    namespace: ingress-nginx
+    version: 4.4.0

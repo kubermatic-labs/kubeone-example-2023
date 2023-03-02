@@ -35,6 +35,10 @@ k1-apply:k1-load-env
 	#make k1-apply-md
 	#make k1-apply-secret
 
+k1-apply-update:k1-load-env
+	cd ${K1_CONFIG} && kubeone apply -m kubeone_update_1.yaml -t ${TF_CONFIG} --verbose ${K1_EXTRA_ARG}
+	make k1-kubeconfig
+
 k1-reset: k1-load-env
 	cd ${K1_CONFIG} && kubeone reset -m kubeone.yaml -t ${TF_CONFIG}  --verbose
 

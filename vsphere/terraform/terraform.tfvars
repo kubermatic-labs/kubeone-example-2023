@@ -1,4 +1,4 @@
-
+allow_insecure = true
 cluster_name = "k1-vsphere-demo"
 
 dc_name = "Hamburg"
