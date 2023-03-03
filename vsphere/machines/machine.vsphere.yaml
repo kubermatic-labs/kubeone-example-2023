@@ -4,6 +4,8 @@ metadata:
   annotations:
     k8c.io/operating-system-profile: osp-ubuntu
     machinedeployment.clusters.k8s.io/revision: "1"
+    cluster.k8s.io/cluster-api-autoscaler-node-group-min-size: '1'
+    cluster.k8s.io/cluster-api-autoscaler-node-group-max-size: '5'
   name: k1-vsphere-new-pool-2
   namespace: kube-system
 spec:

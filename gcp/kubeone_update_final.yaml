@@ -11,6 +11,8 @@ addons:
   enable: true
   addons:
   - name: cluster-autoscaler
+  - name: default-storage-class
+
 helmReleases:
     # releaseName can be omitted, in that case it will defaulted to .chart
   - releaseName: ksm

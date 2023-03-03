@@ -41,6 +41,9 @@ clusterNetwork:
 addons:
   enable: true
   path: "./addons" #l always apply
+  addons:
+  - name: cluster-autoscaler
+  - name: default-storage-class
 
 helmReleases:
   - releaseName: ingress-nginx
