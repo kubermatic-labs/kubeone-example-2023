@@ -7,3 +7,9 @@ cloudProvider:
   cloudConfig: |
     [global]
     regional = true
+machineController:
+  deploy: false
+addons:
+  enable: true
+  addons:
+  - name: default-storage-class

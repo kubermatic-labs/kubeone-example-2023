@@ -3,7 +3,7 @@ K1_CONFIG="."
 TF_CONFIG="./terraform"    #relative from K1_CONFIG
 
 K1_EXTRA_ARG?="--auto-approve"
-K1_KUBECONFIG=./kubeconfig-k1-aws-debian
+K1_KUBECONFIG=./gcp-debian-static-kubeconfig
 #K1_SSH_KEY="use-agent"
 
 ######### KubeOne

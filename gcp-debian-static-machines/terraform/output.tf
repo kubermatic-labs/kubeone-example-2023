@@ -41,13 +41,11 @@ output "kubeone_hosts" {
   }
 }
 
-output "kubeone_hosts_worker" {
+output "kubeone_static_workers" {
   description = "worker endpoints to SSH to"
 
   value = {
     static_worker = {
-      cluster_name         = var.cluster_name
-      cloud_provider       = "gce"
       private_address      = google_compute_instance.static_worker.*.network_interface.0.network_ip
       public_address       = google_compute_instance.static_worker.*.network_interface.0.access_config.0.nat_ip
       hostnames            = google_compute_instance.static_worker.*.name
