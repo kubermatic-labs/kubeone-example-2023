@@ -2,13 +2,13 @@
   "kubeone": {
     "major": "1",
     "minor": "7",
-    "gitVersion": "v1.7.2-4-g02dd7232",
-    "gitCommit": "02dd7232b0ba63019200eda38620233c511f60e3",
+    "gitVersion": "1.7.2",
+    "gitCommit": "00fd09d91da76e307f016afb3b4f42ad6281eb2c",
     "gitTreeState": "",
-    "buildDate": "2024-02-21T15:25:05+01:00",
-    "goVersion": "go1.22.0",
+    "buildDate": "2024-01-05T15:30:12Z",
+    "goVersion": "go1.21.3",
     "compiler": "gc",
-    "platform": "darwin/arm64"
+    "platform": "linux/amd64"
   },
   "machine_controller": {
     "major": "1",

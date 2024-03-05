@@ -11,5 +11,28 @@ machineController:
   deploy: false
 addons:
   enable: true
-  addons:
-  - name: default-storage-class
+  path: "./addons"
+#  addons:
+#  - name: default-storage-class
+helmReleases:
+    # releaseName can be omitted, in that case it will defaulted to .chart
+  - releaseName: metallb
+    # chart is a required field, simply a chart name to deploy
+    chart: metallb
+    # where to find the chart, chan be a remote server or local directory.
+    # --repo flag of the `helm upgrade` command.
+    repoURL: https://metallb.github.io/metallb
+    # namespace to deploy helm release to. --namespace flag of the
+    # `helm upgrade` command.
+    namespace: metallb-system
+    # use specific version instead of latest available, which is highly
+    # recommended, but version can be omitted. --version flag of the
+    # `helm upgrade` command.
+    version: 0.14.3
+    # provide optional overrides for chart values, --values flag of the
+    # `helm upgrade` command
+#    values:
+#      - valuesFile: values.yaml   # it can be a file
+#      - inline:                       # or directly specified inline YAML
+#          replicas: 3
+
