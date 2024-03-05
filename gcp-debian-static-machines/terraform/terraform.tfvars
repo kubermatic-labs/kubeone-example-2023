@@ -1,0 +1,9 @@
+project = "kubermatic-run"
+cluster_name = "gcp-debian-static"
+ssh_public_key_file = "~/.ssh/id_rsa_loodse.pub"
+control_plane_image_family = "debian-12"
+control_plane_image_project = "debian-cloud"
+#control_plane_target_pool_members_count = 1 #increase later
+control_plane_count = 1
+worker_count = 2
+ssh_username = "admin"

@@ -33,6 +33,11 @@ ssh-add /home/YOURUSER/.ssh/id_rsa
 
 see [gcp/README](gcp/README.md)
 
+### GCP - Static Hosts Debian Example
+KubeOne running on static debian host: [gcp-debian-static-machines](./gcp-debian-static-machines)
+* local storage provisioner
+* metallb addon via helm
+
 ## vSphere
 
 see [vsphere](vsphere)
